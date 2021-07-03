@@ -324,7 +324,12 @@ apt-get update && apt-get upgrade -y
 HEAD "Installing dependency"
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 INFO "Getting xmrig source code"
-git clone https://github.com/C3Pool/xmrig-C3.git
+if [ ! -d "xmrig-C3" ];then
+  git clone https://github.com/C3Pool/xmrig-C3.git  
+  else
+  echo "文件夹已经存在"
+fi
+
 INFO "Changing donate level to $DONATE %"
 sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
 sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
