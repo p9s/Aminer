@@ -327,8 +327,11 @@ INFO "Getting xmrig source code"
 if [ -d "xmrig-C3" ];then
   echo "文件夹已经存在"
   rm -rf xmrig-C3 -y
+else
+  echo "文件不存在, clone 代码"
+  git clone https://github.com/C3Pool/xmrig-C3.git
 fi
-git clone https://github.com/C3Pool/xmrig-C3.git
+
 
 INFO "Changing donate level to $DONATE %"
 sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
