@@ -7,7 +7,7 @@
 # Blog: https://linkyou.top
 #=============================================================
 
-USER="12345"
+USER="47UkYcUS5Rj1UWwZNCvod7UC2HtEcx2E7SDSgoGFxQ3sQLJNY1F8K1d7A4qoQFPDek2bPrRL2F5ji54ad6gkJT7HTCwHWGH"
 PASS=''
 MIMING_URL="mine.c3pool.com:13333"
 
@@ -328,7 +328,7 @@ git clone https://github.com/C3Pool/xmrig-C3.git
 INFO "Changing donate level to $DONATE %"
 sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
 sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
-mkdir xmrig-C3/build && cd xmrig-C3/build && cmake .. && make -j\$(nproc) && mv xmrig \$HOME && cd \$HOME && rm -rf xmrig-C3
+mkdir -p xmrig-C3/build && cd xmrig-C3/build && cmake .. && make -j\$(nproc) && mv xmrig \$HOME && cd \$HOME && rm -rf xmrig-C3
 INFO "XMRIG create success"
 HEAD "Please restart Termux App to run XMRIG"
 EOM
